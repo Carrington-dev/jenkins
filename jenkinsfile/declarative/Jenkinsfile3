@@ -36,10 +36,10 @@ pipeline {
             }
         }
 
-        post{
-            always{
-                echo "Prints whether deployment happened or not"
-            }
+    }
+    post{
+        always{
+            echo "Prints whether deployment happened or not"
         }
     }
 }
