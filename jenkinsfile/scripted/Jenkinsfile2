@@ -8,11 +8,12 @@ pipeline {
         
         agent any
 
-        environment{
-            LOG_LEVEL="INFO"
-        }
+        
 
         stage("Build"){
+            environment{
+                LOG_LEVEL="INFO"
+            }
             steps{
                 echo "Build release ${RELEASE} on log level ${LOG_LEVEL}"
             }
@@ -20,7 +21,8 @@ pipeline {
 
         stage("Test"){
             steps{
-                echo "Testing release ${RELEASE} on absent or invisible log level ${LOG_LEVEL}"
+                echo "Testing release ${RELEASE} on absent or invisible log level"
+                //  ${LOG_LEVEL}
             }
         }
     }
