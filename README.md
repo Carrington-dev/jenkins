@@ -26,3 +26,36 @@ pipeline {
     }
 }
 ```
+
+## Scoping In Jenkins
+
+Scoping per stage is also applicable in Jenkins
+
+```
+pipeline {
+    agent any
+    environment {
+        RELEASE="22.23"
+    }
+
+    stages {
+        
+        stage("Build"){
+            agent any
+            environment{
+                LOG_LEVEL="INFO"
+            }
+            steps{
+                echo "Build release ${RELEASE} on log level ${LOG_LEVEL}"
+            }
+        }
+
+        stage("Test"){
+            steps{
+                echo "Testing release ${RELEASE} on absent or invisible log level"
+                //  ${LOG_LEVEL}
+            }
+        }
+    }
+}
+```
