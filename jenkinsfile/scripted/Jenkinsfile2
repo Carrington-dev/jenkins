@@ -6,11 +6,8 @@ pipeline {
 
     stages {
         
-        agent any
-
-        
-
         stage("Build"){
+            agent any
             environment{
                 LOG_LEVEL="INFO"
             }
