@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment {
+        RELEASE = "22.23"
+    }
+
+    stages {
+        
+        agent any
+
+        environment {
+            LOG_LEVEL = "INFO"
+        }
+
+        stage("Build"){
+            echo "Build release ${RELEASE} on log level ${LOG_LEVEL}"
+        }
+
+        stage("Test"){
+            echo "Testing release ${RELEASE} on absent or invisible log level ${LOG_LEVEL}"
+        }
+    }
+}

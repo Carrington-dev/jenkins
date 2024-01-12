@@ -11,7 +11,6 @@
 ## Jenkins File Template
 
 ```
-
 pipeline {
 
     agent any
