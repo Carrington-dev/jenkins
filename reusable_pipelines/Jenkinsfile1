@@ -26,6 +26,7 @@ pipeline{
                 dir('./java-tomcat-sample'){
                     sh '''
                         echo "Executing unit tests"
+                        ls -la
                         mvn test
                     '''
                 }
