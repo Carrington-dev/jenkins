@@ -1,0 +1,43 @@
+pipeline{
+    agent any
+
+    environment{
+        VERSION="0.1.0"
+        RELEASE_VERSION="8.2"
+    }
+
+    stages{
+        stage("Audit tools"){
+            steps{
+                sh '''
+                    git --version
+                    java --version
+                    mvn --version
+                '''
+            }
+        }
+
+        stage("Unit Test"){
+            steps{
+                dir('./java-tomcat-sample'){
+                    sh '''
+                        echo "Executing unit tests"
+                        mvn test
+                    '''
+                }
+
+            }
+        }
+
+        stage("Build "){
+            steps{
+                echo "Building version: ${VERSION} with suffix: ${RELEASE_VERSION}"
+                echo "Mention your application code build here!!!"
+                sh '''
+                    mvn -f java-tomcat-sample/pom.xml clean package
+                '''
+            }
+        }
+    }
+
+}

@@ -62,6 +62,8 @@ pipeline {
 
 ## Running Stages In Parallel
 
+Stages can also be run in parallel like below
+
 ```Jenkinsfile
 
 pipeline {
@@ -124,3 +126,4 @@ pipeline {
 }
 
 ```
+
