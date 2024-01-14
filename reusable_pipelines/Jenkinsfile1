@@ -13,14 +13,17 @@ pipeline{
                     git --version
                     java --version
                     mvn --version
+                    echo "________________________BEGIN Testing_________________________"
+                    pwd
                     ls
+                    echo "________________________ENDED Testing_________________________"
                 '''
             }
         }
 
         stage("Unit Test"){
             steps{
-                dir('./java-tomcat-sample'){
+                dir('../java-tomcat-sample'){
                     sh '''
                         echo "Executing unit tests"
                         mvn test
