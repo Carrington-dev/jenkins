@@ -1,0 +1,17 @@
+upstream electromasters {
+    server 127.0.0.1:8080;
+}
+
+server {
+    listen 80;
+    server_name 13.244.117.49;
+    client_max_body_size 100M;
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+
+    location / {
+        include proxy_params;
+        proxy_pass http://electromasters;
+    }
+
+}
