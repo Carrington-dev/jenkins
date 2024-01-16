@@ -5,11 +5,11 @@
 docker exec <container_name> <command>
 ```
 examples are
-1. 
+1. With docker compose
 ```
 docker exec jenkins/jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
-1. 
+2. With docker
 ```
 docker exec vroomy cat python3 manage.py makemigrations
 docker exec vroomy cat python3 manage.py migrate
@@ -46,5 +46,17 @@ docker stop <continer-id>
 
 ```bash
 docker rm <continer-id>
+```
+
+## To see all contianers
+
+```bash
+docker ps -a 
+```
+
+## To see images
+
+```bash
+docker images
 ```
 

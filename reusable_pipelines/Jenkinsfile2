@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'python:3.7'
+            image 'jenkins:latest'
             args '-v $HOME/.m2:/root/.m2'
         }
     }
