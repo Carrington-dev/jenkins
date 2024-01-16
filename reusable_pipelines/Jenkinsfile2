@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'maven:latest'
+            image 'python:3.7'
             args '-v $HOME/.m2:/root/.m2'
         }
     }
